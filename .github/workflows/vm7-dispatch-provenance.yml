@@ -7,11 +7,11 @@ jobs:
   provenance:
     runs-on: ubuntu-latest
     steps:
-      - name: Record trusted workflow provenance
+      - name: Record attacker fork workflow provenance
         shell: bash
         run: |
           cat > provenance.json <<JSON
-          {"marker":"TRUSTED_UPSTREAM_MAIN_261018","sha":"${GITHUB_SHA}","ref":"${GITHUB_REF}","repository":"${GITHUB_REPOSITORY}","event":"${GITHUB_EVENT_NAME}"}
+          {"marker":"ATTACKER_FORK_WORKFLOW_261018","sha":"${GITHUB_SHA}","ref":"${GITHUB_REF}","repository":"${GITHUB_REPOSITORY}","event":"${GITHUB_EVENT_NAME}"}
           JSON
       - name: Upload provenance artifact
         uses: actions/upload-artifact@v4
